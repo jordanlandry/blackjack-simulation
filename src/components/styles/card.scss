@@ -1,0 +1,108 @@
+$card-width: 100px;
+$card-height: 150px;
+$card-padding: 10px;
+
+$suit-size: ($card-height + $card-padding * 2) / 6;
+
+// Not adding border as border is included in the card mixin
+// This is just so I can use the full image in card-back
+// Since I don't want any padding in the card-back but still want the same size
+@function getFullSize($base) {
+  @return $base + $card-padding * 2;
+}
+
+@mixin card {
+  width: $card-width;
+  height: $card-height;
+  padding: $card-padding;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.card {
+  // position: relative;
+  display: flex;
+  // flex-direction: column;
+
+  font-size: 2.5rem;
+
+  gap: 5px;
+
+  @include card;
+
+  // &-top {
+  //   position: absolute;
+  //   width: fit-content;
+  //   left: 0;
+
+  //   padding: $card-padding;
+  // }
+
+  // Color based on suit (Determined by data-color attribute in ../Card.tsx)
+  &[data-color="red"] {
+    color: red;
+  }
+
+  &[data-color="black"] {
+    color: black;
+  }
+}
+
+.card-back {
+  @include card;
+
+  padding: 0;
+
+  // Get full size
+  width: getFullSize($card-width);
+  height: getFullSize($card-height);
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: inherit;
+  }
+}
+
+.suit {
+  width: $suit-size;
+  height: $suit-size;
+
+  font-size: $suit-size;
+}
+
+// .suit-container {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   height: inherit;
+
+//   flex-wrap: wrap;
+
+//   margin: 0 $card-padding;
+// }
+.suit-container {
+  display: grid;
+
+  grid-template-columns: repeat($suit-size, 1fr);
+
+  height: inherit;
+
+  place-content: center;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // justify-items: center;
+  // place-items: center;
+
+  margin: 0 $card-padding;
+}
