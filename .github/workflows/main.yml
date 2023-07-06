@@ -18,8 +18,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Debug output
-        run: ls -R src
-
       - name: Run tests
         run: npx vitest
