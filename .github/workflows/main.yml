@@ -19,7 +19,7 @@ jobs:
         run: npm install
 
       - name: Debug output
-        run: ls -R
+        run: ls -R src
 
       - name: Run tests
         run: npx vitest
