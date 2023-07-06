@@ -76,17 +76,6 @@ $suit-size: ($card-height + $card-padding * 2) / 6;
   font-size: $suit-size;
 }
 
-// .suit-container {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   height: inherit;
-
-//   flex-wrap: wrap;
-
-//   margin: 0 $card-padding;
-// }
 .suit-container {
   display: grid;
 
@@ -100,9 +89,6 @@ $suit-size: ($card-height + $card-padding * 2) / 6;
     justify-content: center;
     align-items: center;
   }
-
-  // justify-items: center;
-  // place-items: center;
 
   margin: 0 $card-padding;
 }

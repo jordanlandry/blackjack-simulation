@@ -9,3 +9,5 @@ export interface ICard {
 export type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
 
 export type Decision = "hit" | "stand" | "double" | "split" | "surrender";
+
+export type CountMethod = "hi-lo" | "none"; // TODO: Add more counting methods

@@ -1,0 +1,27 @@
+.blackjack-page {
+  width: fit-content;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.rules-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  width: fit-content;
+  justify-content: center;
+  height: 100%;
+
+  padding: 1rem;
+
+  border: 1px solid black;
+
+  display: none;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,3 +1,20 @@
 body {
   font-family: "montserrat", sans-serif;
 }
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  margin: 5px 0;
+
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+
+  transition: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+  }
+}
